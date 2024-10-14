@@ -1,0 +1,63 @@
+CREATE TABLE capacitador(
+id_capacitador int PRIMARY KEY AUTO_INCREMENT,
+nombre varchar(20),
+apellido varchar(20),
+usuario_cap varchar(20),
+password_cap varchar(20)
+);
+
+CREATE TABLE procurador(
+id_procurador int PRIMARY KEY AUTO_INCREMENT,
+nombre varchar(20),
+apellido varchar(20),
+usuario_procu varchar(20),
+password_procu varchar(20),
+telefono varchar(20),
+email varchar(200),
+direccion text,
+casa_estudio text
+);
+CREATE TABLE capacitacion(
+id_capacitacion int PRIMARY KEY AUTO_INCREMENT,
+nombre_capacitacion text,
+tipo_capacitacion varchar(20),
+id_capacitador int,
+estado varchar(20),
+FOREIGN KEY(id_capacitador) REFERENCES capacitador(id_capacitador)
+);
+
+CREATE TABLE item_capacitacion(
+id_item int PRIMARY KEY AUTO_INCREMENT,
+nombre_item text,
+nombre_item_interno text,
+numero_item int,
+tipo_item varchar(50),
+tiempo_item  time,
+id_capacitacion int,
+FOREIGN KEY(id_capacitacion) REFERENCES capacitacion(id_capacitacion)
+);
+
+CREATE TABLE preguntas(
+id_pregunta int PRIMARY KEY AUTO_INCREMENT,
+pregunta text,
+cantidad_respuestas int,
+id_item int,
+FOREIGN KEY(id_item) REFERENCES item_capacitacion(id_item)
+);
+
+CREATE TABLE respuesta(
+id_respuesta int PRIMARY KEY AUTO_INCREMENT,
+respuesta text,
+valor int,
+id_pregunta int,
+FOREIGN KEY(id_pregunta) REFERENCES preguntas(id_pregunta)
+);
+
+CREATE TABLE proceso_capacitacion(
+id_proceso int PRIMARY KEY AUTO_INCREMENT,
+nomero_item_avanzado varchar(10),
+id_procurador int,
+id_capacitacion int,
+FOREIGN KEY(id_procurador) REFERENCES procurador(id_procurador),
+FOREIGN KEY(id_capacitacion) REFERENCES capacitacion(id_capacitacion)
+);

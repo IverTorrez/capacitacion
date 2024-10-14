@@ -1,0 +1,40 @@
+#img_cargando{
+	/*width: 15px;
+	display: none;*/
+
+}
+/*ESTILOS PARA RESPONSIVE DEL VIDEO DE YOUTUBE*/
+#embed-youtube {
+position:relative;
+width:100%;
+height:99%;
+/*padding-bottom:56.25%;
+padding-top:30px;
+height:0;*/
+/*overflow:hidden;*/
+}
+
+#embed-youtube iframe, #embed-youtube object, #embed-youtube embed {
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+}
+
+/*#contenido_diapositiva{
+position:relative;
+padding-bottom:56.25%;
+padding-top:30px;
+height:0;
+overflow:hidden;
+
+}*/
+
+/*#contenido_diapositiva iframe, #contenido_diapositiva object, #contenido_diapositiva {
+position:absolute;
+top:50px;
+left:0;
+width:100%;
+height:100%;
+}*/

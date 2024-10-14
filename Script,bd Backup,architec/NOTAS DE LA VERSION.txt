@@ -1,0 +1,4 @@
+En esta version se aumento una tabla "respuesta" que 
+roba de la tabla "pregunta", y se elimino el campo respuesta de la tabla 
+"pregunta", se agrego el atributo "cantidad_respuestas" a la 
+tabla "pregunta"
